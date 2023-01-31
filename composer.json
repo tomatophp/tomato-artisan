@@ -1,5 +1,5 @@
 {
-    "name": "queents/tomato-artisan",
+    "name": "tomatophp/tomato-artisan",
     "type": "library",
     "description": "artisan terminal to run artisan commands using GUI",
     "keywords": [
@@ -14,7 +14,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Queents\\TomatoArtisan\\": "src/"
+            "TomatoPHP\\TomatoArtisan\\": "src/"
         }
     },
     "autoload-dev": {
@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Queents\\TomatoArtisan\\TomatoArtisanServiceProvider"
+                "TomatoPHP\\TomatoArtisan\\TomatoArtisanServiceProvider"
             ]
         }
     },
