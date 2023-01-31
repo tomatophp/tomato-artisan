@@ -9,11 +9,6 @@ Artisan terminal to run artisan commands using GUI
 ```bash
 composer require tomatophp/tomato-artisan
 ```
-after install use this command
-
-```bash
-php artisan tomato-artisan:install
-```
 
 ## Support
 
