@@ -1,0 +1,44 @@
+{
+    "name": "queents/tomato-artisan",
+    "type": "library",
+    "description": "artisan terminal to run artisan commands using GUI",
+    "keywords": [
+        "php",
+        "laravel",
+        "template",
+        "artisan",
+        "config",
+        "commands",
+        "tomato"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Queents\\TomatoArtisan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Queents\\TomatoArtisan\\TomatoArtisanServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "queents/console-helpers": "^1.0",
+        "queents/tomato-admin": "^1.0",
+        "queents/tomato-roles": "^1.0"
+    }
+}
