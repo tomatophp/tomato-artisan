@@ -22,7 +22,7 @@ class TomatoArtisanServiceProvider extends ServiceProvider
         //Publish Config
         $this->publishes([
            __DIR__.'/../config/tomato-artisan.php' => config_path('tomato-artisan.php'),
-        ], 'config');
+        ], 'tomato-artisan-config');
 
         //Register views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'tomato-artisan');
@@ -30,15 +30,15 @@ class TomatoArtisanServiceProvider extends ServiceProvider
         //Publish Views
         $this->publishes([
            __DIR__.'/../resources/views' => resource_path('views/vendor/tomato-artisan'),
-        ], 'views');
+        ], 'tomato-artisan-views');
 
         //Register Langs
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'tomato-artisan');
 
         //Publish Lang
         $this->publishes([
-           __DIR__.'/../resources/lang' => resource_path('lang/vendor/tomato-artisan'),
-        ], 'lang');
+           __DIR__.'/../resources/lang' => app_path('lang/vendor/tomato-artisan'),
+        ], 'tomato-artisan-lang');
 
         //Register Routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
