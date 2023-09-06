@@ -3,8 +3,9 @@
 namespace TomatoPHP\TomatoArtisan;
 
 use Illuminate\Support\ServiceProvider;
+use TomatoPHP\TomatoAdmin\Facade\TomatoMenu;
 use TomatoPHP\TomatoArtisan\Menus\ArtisanMenu;
-use TomatoPHP\TomatoPHP\Services\Menu\TomatoMenuRegister;
+use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
 
 
 class TomatoArtisanServiceProvider extends ServiceProvider
@@ -43,12 +44,16 @@ class TomatoArtisanServiceProvider extends ServiceProvider
         //Register Routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
-        TomatoMenuRegister::registerMenu(ArtisanMenu::class);
-
     }
 
     public function boot(): void
     {
-        //you boot methods here
+        TomatoMenu::register([
+            Menu::make()
+                ->group(trans('tomato-artisan::global.group'))
+                ->label(trans('tomato-artisan::global.title'))
+                ->icon("bx bxs-terminal")
+                ->route("admin.artisan.index"),
+        ]);
     }
 }
